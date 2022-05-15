@@ -1,9 +1,11 @@
 let movieData = null
 let customerData = null
 var outputArray = []
+var newOutputArray = []
 var outputForm = []
 var inputCounter = 0
 var panelArray = []
+panelArray.length = 3
 var genreArray = []
 var divID = 0
 var movieDivID = 0
@@ -13,6 +15,13 @@ var customerOutputArray = []
 var customerOutPutNumber = []
 var tableTitle = ""
 var customerChoice = 0
+var addNumber = 0
+var addForename = null
+var addSurname = null
+var priceCounter = 0
+
+
+// get databases from server
 
 async function getdata() {
   console.log("getting data...")
@@ -28,6 +37,7 @@ async function getdata() {
 })
 }
 
+// generate landingpage suggestions
 
 function createSuggestions(movieData) {
   let i = movieData
@@ -72,7 +82,7 @@ function createSuggestions(movieData) {
 }
 
 
-
+// generate suggestions beneath main suggestion based on genre or search history
 
 function createInputSuggestions(suggested, movieData, inputCounter, panelArray, genreArray){
       let s = suggested
@@ -84,15 +94,14 @@ function createInputSuggestions(suggested, movieData, inputCounter, panelArray, 
       let panelContentThree = 2
       var suggestionPanels = [document.getElementById("suggestionsResults1"), document.getElementById("suggestionsResults2"), document.getElementById("suggestionsResults3")]
 
-
       if(inputCounter>1){
-        
+        console.log("REMOVE CHILDREN")
         suggestionPanels[0].removeChild(suggestionPanels[0].firstElementChild)
         suggestionPanels[1].removeChild(suggestionPanels[1].firstElementChild)
         suggestionPanels[2].removeChild(suggestionPanels[2].firstElementChild)
       }
       if(inputCounter <4 ){
-        console.log("inputCounter<4")
+        console.log("inputCounter<4"+inputCounter)
         let p1 = document.createElement('li')
         let p2 = document.createElement('li')
         let p3 = document.createElement('li')
@@ -128,10 +137,13 @@ function createInputSuggestions(suggested, movieData, inputCounter, panelArray, 
         suggestionPanels[panelContentThree].appendChild(p3)
     }
       if(inputCounter >3 ){
-        console.log("inputCounter>3")
+        console.log("inputCounter>3"+inputCounter)
         suggestionPanels[panelContentOne].removeEventListener("click", function(){movieSuggestionSearch(genreArray[0])})
         suggestionPanels[panelContentTwo].removeEventListener("click", function(){movieSuggestionSearch(genreArray[2])})
         suggestionPanels[panelContentThree].removeEventListener("click", function(){movieSuggestionSearch(genreArray[4])})
+
+        // TEST
+        console.log(suggestionPanels[0])
         let p1 = document.createElement('li')
         let p2 = document.createElement('li')
         let p3 = document.createElement('li')
@@ -158,24 +170,32 @@ function createInputSuggestions(suggested, movieData, inputCounter, panelArray, 
             var p3title = movieData[e].title
             suggestionPanels[panelContentThree].style.backgroundImage = "linear-gradient(rgba(17, 16, 16, 0.5), rgba(0, 0, 0, 0.5)), url('"+p3image+"')"           
           }
-        }        
+        }   
+        
+    // UNSICHER OB DAS FUNKTIONIERT    
+      
+        
     //    suggestionPanels[panelContentOne].addEventListener("click", function(){movieSuggestionSearch(p1title)})
     //    suggestionPanels[panelContentTwo].addEventListener("click", function(){movieSuggestionSearch(p2title)})
     //    suggestionPanels[panelContentThree].addEventListener("click", function(){movieSuggestionSearch(p3title)})
+
         suggestionPanels[panelContentOne].appendChild(p1)
         suggestionPanels[panelContentTwo].appendChild(p2)
         suggestionPanels[panelContentThree].appendChild(p3)
       }
 }
 
-function movieSuggestionSearch(){ 
+// Suggestions Panel interaction search
+
+function movieSuggestionSearch(p1title, p2title, p3title){ 
+    console.log("movieSuggestionSearch!!!")
     TestCounter++
     inputCounter++
     divID++
     let i = arguments[0] 
     let m = movieData
     
-    console.log("movieSuggestionSearchArgument "+i) 
+  //  console.log("movieSuggestionSearchArgument "+i) 
     for(j=0; j < m.length; j++){
       let title = m[j].title
       if(title === i){       
@@ -184,7 +204,7 @@ function movieSuggestionSearch(){
         var suggested = suggestedTitle
         var suggestedPrice = m[j].price
         var suggestedAvailable = m[j].available
-        console.log(suggestedTitle, suggestedPrice, suggestedAvailable, suggestedImage)
+ //       console.log(suggestedTitle, suggestedPrice, suggestedAvailable, suggestedImage)
       }
     }  
             
@@ -232,10 +252,12 @@ function movieSuggestionSearch(){
           imageWrapper.appendChild(imageWrapperP)
           imageWrapper.appendChild(imageWrapperB)     
 
-          console.log("TEST :"+TestCounter)
+    //      console.log("TEST :"+TestCounter) 
 }
 
-// Create movie search / generate results / add to Shopping Kart
+
+
+// Create movie search / generate results / add to Shopping Kart / Navbar Search
 
 function createMovieSearch(movieData) {
   const searchInput = document.getElementById("navSearch")
@@ -542,7 +564,7 @@ function createUsersSearch(usersData) {
   
 function showRentWindow(){   
     let i = outputForm.filter(Number)
-    let priceCounter = i.length
+    priceCounter = i.length
     console.log(priceCounter)
     let a = document.getElementById("ausgeliehen")
     a.style.display = "flex"
@@ -557,8 +579,9 @@ function showRentWindow(){
     let addCustomerWrapper = document.getElementById("addCustomerWrapper")
     addCustomerWrapper.style.display = "none"
     customDim()
-
 }
+
+
 
    function loadPage(){
      let i = document.getElementById("shoppingKartWrapper")
@@ -640,7 +663,6 @@ function showRentWindow(){
 // Start Results State
 
  function stateOne(){
-  console.log("STATE ONE")
   let mainpage = document.getElementById("mainpage")
   mainpage.style.display = "flex"
   let mainResults = document.getElementById("mainResults")
@@ -656,7 +678,6 @@ function showRentWindow(){
 // Movie Results State 
 
 function stateTwo(){
-  console.log("STATE TWO")
  let mainpage = document.getElementById("mainpage")
  mainpage.style.display = "none"
  let mainResults = document.getElementById("mainResults")
@@ -672,7 +693,6 @@ function stateTwo(){
 // New Customer State
 
 function stateThree(){
-  console.log("STATE THREE")
  let mainpage = document.getElementById("mainpage")
  mainpage.style.display = "none"
  let mainResults = document.getElementById("mainResults")
@@ -688,7 +708,6 @@ function stateThree(){
 // Customer Results State
 
 function stateFour(){
-  console.log("STATE FOUR")
 let mainpage = document.getElementById("mainpage")
 mainpage.style.display = "none"
 let mainResults = document.getElementById("mainResults")
@@ -721,10 +740,31 @@ if(s.innerHTML == "Kundensuche"){
 
    function rentMovie(){
     let customer = customerChoice
-    outputArray = outputForm.filter(Number)               
+    let arrayUp = 0
+    outputArray = outputForm.filter(Number)  
+    // Filter movieData with ouputArray  
+    for(i=0; i<outputArray.length; i++){
+      for(j=0; j<movieData.length; j++){
+        if(movieData[j].movieID === outputArray[i]){
+          var reduceAvailable = movieData[j].available
+        }
+      }
+      console.log(reduceAvailable)
+      var newAvailable = reduceAvailable-1
+      var outputMovieID = outputArray[i]
+      arrayUp++
+      newOutputArray[arrayUp] = {
+        outputMovieID,
+        newAvailable
+       }
+    }
+
+      console.log(newOutputArray)
+    
+    
     var rentData = {
       userID: customer,
-      movies: outputArray
+      movies: newOutputArray
     }  
     axios.post('/save_movies', {
       o: rentData  
@@ -757,16 +797,40 @@ if(s.innerHTML == "Kundensuche"){
     });
    }
 
+   function showAddWindow(newNumber, forename, surname){   
+    let a = document.getElementById("erstellt")
+    addNumber = parseInt(newNumber)
+    addForename = forename
+    addSurname = surname
+    console.log(addNumber, addForename, addSurname)
+    a.style.display = "flex"
+    let newCustomerNumber = document.getElementById("newCNumber")
+    newCustomerNumber.innerHTML = "Kundennummer: "+(addNumber)+" Euro"
+    let mainpage = document.getElementById("mainpage")
+    mainpage.style.display = "none"
+    let mainResults = document.getElementById("mainResults")
+    mainResults.style.display = "none"
+    let customerResults = document.getElementById("customerResults")
+    customerResults.style.display = "none"
+    let addCustomerWrapper = document.getElementById("addCustomerWrapper")
+    addCustomerWrapper.style.display = "none"
+    customDim()
+  }
+
    function saveNewCustomerData(){
+     let newNumber = Number(String(parseInt(Date.now() * Math.random())).slice(0, 5))
+     console.log(newNumber)
      let i = document.getElementById("customerForename")
      let j = document.getElementById("customerSurname")
      console.log(i)
      console.log(j)
      let forename = i.value
      let surname = j.value
+     showAddWindow(newNumber, forename, surname)
      var newCustomer = {
       forename: forename,
-      surname: surname
+      surname: surname,
+      cNumber: newNumber
     } 
      axios.post('/create_customer', {
       o: newCustomer  
@@ -778,3 +842,4 @@ if(s.innerHTML == "Kundensuche"){
       console.log(error);
     });
    }
+
