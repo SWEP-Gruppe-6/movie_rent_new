@@ -1,0 +1,1025 @@
+html{width: 100%;
+  height: 100%;}
+
+::-moz-selection {background: rgb(99, 99, 99);
+  color: white;}
+
+::selection {background: rgb(99, 99, 99);
+  color: white;}
+/*
+body{width: 100%;
+  height: 100%;
+  margin-top: 0px;
+  background:linear-gradient(rgba(17, 16, 16, 0.5), rgba(0, 0, 0, 0.5)), url(https://i.imgur.com/jrEFD1z.jpeg);
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-left: 0;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-color: rgb(56, 54, 54);}  */
+
+
+article{
+  height: 95%;
+  display: flex;
+  align-items: center;
+  position: relative;}    
+
+footer{
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  margin-bottom: 0px;
+  display: flex;
+  color: white;
+  display: table;
+  z-index: 4;}
+
+footer div{
+ display: table-cell;
+ vertical-align: middle;
+ width: 100%;
+ height: 100%;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-size: 70%;
+ text-align: center;}
+
+#header_background{
+  position: absolute;
+  z-index: -1;
+  filter: brightness(50%);
+  margin-left:auto;
+  margin-right: auto;
+  height: auto;
+  width: 100%;}
+
+nav{width:100%;
+  position: fixed;
+  top: 0%;
+  height: 100px;
+  background-color: rgb(133, 15, 15);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 3;}
+
+h1{font-size: 200%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  display: flex;
+  width: 50%;color: white;
+  cursor: pointer;} 
+
+#logoWrapper{
+  height: 100%;
+  width: 33%;
+  display: flex;
+  float: left;
+  margin-left: 50px;
+  margin-top: 20px;
+  padding-bottom: 10px;}
+
+#logo{
+  height: 50%;
+  width: auto;
+  margin-top: 15px;
+  cursor: pointer;}    
+  
+#logoWrapper:hover{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;}
+
+  #kartNav{
+    width: auto;
+    height: 40%;
+    cursor: pointer;
+    float: right;
+    transition: height 0.2s;
+  }
+
+  #kartNav:hover{
+    height: 50%;
+  }
+
+  #kartNavWrapper{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 11%;}
+
+#addCustomer{
+  justify-content: right;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 11%;
+}    
+
+#customerNavWrapper{
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#showCustomerInterface{
+  width: auto;
+  height: 40%;
+  cursor: pointer;
+  float: right;
+  transition: height 0.2s;
+}
+
+#showCustomerInterface:hover{
+  height: 50%;
+}
+
+#kunde{width: 10%;
+  margin-right: 50px;
+  margin-top: 10px;}
+
+#kunde p{font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  font-size: 130%;
+  width: 200px;
+  float: right;
+  text-align: center;
+  cursor: pointer;} 
+
+  #kunde p:hover{
+  font-size: 150%;} 
+
+  #kunde p{text-decoration: none;
+  color: white;
+  transition: font-size 0.2s;}   
+
+#dim{
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 2;
+  opacity: 0.7;
+}    
+
+#dimNav{
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+#ausgeliehen{
+  background-color: white;
+  width: 500px;
+  min-height: 400px;
+  position: absolute;
+  margin: auto;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  left: 50%;
+  margin-left: -250px;
+  top: 50%;
+  margin-top: -200px;
+  background: url(https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/12/17/14/cinema-getty.jpg?width=982&height=726&auto=webp&quality=75);
+  background-position: center center;
+  background-attachment: local;
+  background-size: cover;
+  background-repeat: space;
+  background-color: rgb(56, 54, 54);
+  z-index: 3;}
+
+#ausgeliehen p{
+  width: 500px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 35px;
+  font-weight: bolder;
+  color: white;}  
+
+ #weiter{
+  width: 90px;
+  height: 40px;
+  background-color: rgb(75, 11, 11);
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  color: white;
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: transform .3s ease-in-out;
+  border-radius: 5px;
+ } 
+
+#weiter:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------SUCHE--------------------------------------------------------------------------------*/     
+
+#searchbar{background-color: white;
+  width: 300px;
+  height: 30px;
+  margin: auto;
+  border-radius: 25px;}
+
+#container{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 33%;
+  height: 60%;
+  margin: auto;
+  border-radius: 7px;
+  font-size: 26px;
+  z-index: 2;}
+
+#suggestions{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 7px;
+  width: 100%;
+  min-height: 0px;
+  margin-top: 0%;
+  display: flex;
+  flex-direction: column;}
+
+#suggestions p{
+  padding-left: 27px;
+  padding-top: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 30px;
+  color: grey;
+  font-size: 20px;
+  border-radius: 7px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgb(255, 255, 255);}
+
+#suggestions p:hover{
+  background-color: lightgrey;
+  cursor: pointer;}
+
+  
+#navCustomerSuggestions{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(255, 255, 255);
+  border-radius: 7px;
+  width: 100%;
+  min-height: 0px;
+  margin-top: 0%;
+  display: flex;
+  flex-direction: column;}
+
+#navCustomerSuggestions p{
+  padding-left: 27px;
+  padding-top: 4px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 30px;
+  color: grey;
+  font-size: 20px;
+  border-radius: 7px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: rgb(255, 255, 255);}
+
+#navCustomerSuggestions p:hover{
+  background-color: lightgrey;
+  cursor: pointer;}
+
+  
+
+#navSearch{background: transparent;
+  border: none;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 0px;
+  padding-left: 30px;
+  font-size: 24px;} 
+
+#navSearch:focus{
+  outline: none;}
+
+  #customerSearch{background: transparent;
+    border: none;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    border-radius: 0px;
+    padding-left: 30px;
+    font-size: 24px;} 
+  
+  #customerSearch:focus{
+    outline: none;}
+
+/* --------------------------------------------------------Shopping Kart-------------------------------------------------------------------------------------*/
+
+#shoppingKartWrapper{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding-right: 0px;
+  z-index: 0;}
+
+#shoppingKart{
+  
+  background-color: rgb(34, 33, 33);
+  width: 220px;
+  height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-right: -220px;
+  transition: margin-right 1s;}
+
+#shoppingKart form{
+  height: 30px;
+  margin-top: 10px;
+}
+
+
+#buttonKart{
+  width: 50px;
+  height: 50px;
+  border-radius: 20px 1px 1px 20px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 220px;
+  margin-left: -50px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 40px;
+  font-weight: bolder;}
+
+#buttonKart:hover{
+  cursor: pointer;}
+
+#buttonKart img{
+  margin-top: 10px;
+  width: 30px;
+  height: 30px;
+  margin-left: 12px;}
+
+#kartSearchWrapper{
+  width: 100%;
+  margin-top: 150px;
+  padding-left: 27px;}
+
+#kartSearchWrapper input{
+  width: 180px;
+  height: 25px;
+  font-size: 20px;
+  color:rgb(56, 54, 54);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#customerInput{
+  width: 140px;
+  border-radius: 5px;
+  padding-left: 8px;}
+
+#customerSuggestions{
+  width: 176px;
+  position: fixed;}
+
+#customerSuggestions p{
+  color: rgb(102, 101, 101);
+  height: 20px;
+  width: 170px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  padding-left: 8px;
+  cursor: pointer;
+  background-color: rgb(226, 226, 226);
+  padding-top: 4px;
+  margin-top: 0px;
+  margin-bottom: 0px;}
+
+  #customerSuggestions p:hover{
+    color: rgb(255, 255, 255);
+    height: 20px;
+    width: 170px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    padding-left: 8px;
+    cursor: pointer;
+    background-color: rgb(110, 109, 109);
+    padding-top: 4px;
+    margin-top: 0px;
+    margin-bottom: 0px;}
+  
+
+#setCustomer{
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 255, 255);
+  width: 180px;
+  height: 20px;
+  margin-left: 30px;}
+
+#setMovies{
+  width: 176px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 630px;
+  max-height: 630px;
+  overflow: auto;
+  overflow-x: hidden;}
+
+#setMovies p{
+  width: 80%;
+  height: 20px;
+  font-size: 12px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(255, 255, 255);
+  padding-left: 20px;}
+
+#checkout{
+  background-color: rgb(90, 23, 23);
+  color: white;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  position: fixed;
+  margin-bottom: 0px;
+  margin-left: 60px;
+  cursor: pointer;
+  transition: transform .3s ease-in-out;
+  border-radius: 5px;
+}  
+
+#checkout:hover{
+  transform: scale(1.2);
+}
+
+#output{
+  position: fixed;
+  margin-left: -10000px; 
+}
+
+#setMovies div{
+  width: 160px;
+  height: 20px;
+}
+
+#setMovies div button{
+  float: right;
+}
+
+#setMovies div p{
+  float: left;
+  width: 100px;
+  margin-top: 3px;
+}
+
+  /*--------------------------------- Filme Suchergebnisse ----------------------------------------------*/
+
+/*
+#input{
+  width: 800px;
+  min-height: 300px;
+  max-height: 600px;
+  position: relative;
+  margin: auto; 
+  margin-top: 200px; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 5px 8px 3px rgb(0, 0, 0);
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;}
+
+#inputMovies{
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  border-radius: 5px;}   */
+
+/* #inputMovies div{
+  width: 100%;
+  margin: auto;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  background-color: rgb(255, 255, 255);} 
+
+#input div p{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: left;
+  vertical-align: middle;
+  margin: auto;}
+
+.imageWrapper{
+
+  float: left;
+  height: 120px;
+  width: 100%;
+  display: flex;
+  transition: background-size 1s ease-in-out;
+  background-position: center -290px; 
+  background-size: 100%; 
+  background-repeat: no-repeat;
+  }
+
+  .imageWrapper:hover{
+  
+  background-size: 110% auto;
+  }   */
+
+/* #input div img{
+    height: 40px;
+    width: auto;
+    vertical-align: middle;
+    transition: transform .2s;
+    z-index: 3;
+    margin: auto;}
+
+  #input div img:hover{
+    transform: scale(2.2);
+    width: auto;
+    vertical-align: middle;
+    box-shadow: 0px 5px 8px 3px rgb(46, 45, 45);} 
+
+#input div button{
+  float: right;
+  vertical-align: middle;
+  margin: auto;}
+
+#input div button:hover{
+  cursor: pointer;}
+
+/* ------------------------------ Kunden Suchergebnisse ------------------------------------ */
+
+#userInput{
+  backdrop-filter: blur(10px);
+  width: 500px;
+  min-height: 100px;
+  max-height: 600px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  margin: auto;      
+  border-radius: 25px; 
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 5px 8px 3px rgb(0, 0, 0);
+  z-index: 1;}
+
+#inputUsers{
+  width: 90%;
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 5px;
+
+  color: grey;
+  font-size: 14px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  padding-top: 30px;
+  height: 50px;
+  background-color: rgb(255, 255, 255);}
+
+  /*  Vorschläge Filme */
+
+  #mainpage{
+    width: 1200px;
+    height: 90%;
+    margin-top: 70px;
+  /*  backdrop-filter: blur(10px); */
+  /*  position: relative;   */
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    display: flex;
+  }  
+
+#movieSuggestions{
+  position: relative;
+/*   background-color: blue; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+
+ #suggestionsWrapper{
+ /*  background-color: rgb(235, 235, 10); */
+   width: 100%;
+   height: 800px;
+   vertical-align: middle;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+ } 
+
+#suggestionsWrapper > div{
+/*  background-color: blueviolet; */
+  height: 30%;
+  width: 100%;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; 
+}
+
+#suggestionsWrapper > p{
+  color: white;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 40px;
+  margin-bottom: 5px;
+}
+
+#suggestionsWrapper > div div{
+  height: auto;
+  width: 33%;
+  background-position: center -15px; 
+  background-size: 160%; 
+  background-repeat: no-repeat;
+  transition: background-size 0.7s ease-in-out;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+
+}
+#suggestionsWrapper > div div:hover{
+  background-size: 140%; 
+}
+
+#suggestionsWrapper > div div div{
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  position: relative;
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#suggestionsWrapper > div div div:hover > p{
+  font-size: 30;
+  opacity: 1;
+}
+
+#suggestionsWrapper > div div div p{
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  opacity: .6;
+  }
+
+  #suggestionsWrapper > div div div p{
+    transition: all .7s ease-in-out;
+  }
+
+
+ /*  Suchergebnisse Nav Eingabe */
+ 
+ #mainResults{
+  width: 1200px;
+  height: 90%;
+  margin-top: 70px;
+/*  backdrop-filter: blur(10px); */
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  display: none;
+ }
+
+#inputSuggestionsWrapper{
+    width: 100%;
+    height: 800px;
+    margin-top: 17px;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }
+
+ #movieInputSuggestions{
+   width: 100%;
+ }
+
+ #inputSuggestion{
+   height: 400px;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   background-size: 140%;
+   background-position: center center;
+   transition: background-size 3s ease-in-out;
+ }
+
+ #inputSuggestion:hover{
+   background-size: 150%;
+ }
+
+ 
+
+ #imageWrapper{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: background-size 1s ease-in-out;
+  background-position: center -70px; 
+  background-size: 100%; 
+  background-repeat: no-repeat;
+  overflow: hidden;
+  }
+
+  #imageWrapper:hover{
+  
+  background-size: 110% auto;
+  }
+
+  #imageWrapper > p{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  #imageWrapper > p:hover{
+    cursor: default;
+  }
+
+ #suggestionsResults{
+   height: 300px;
+   width: 100%;
+   display: flex;
+   flex-direction: row;
+   justify-content:space-between;
+   align-items: center;
+ }
+
+ #suggestionsResults > ul{
+   padding: 0px;
+   list-style-type: none;
+   height: 270px;
+   width: 30%;
+   margin-top: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: background-size 1s ease-in-out;
+   background-size: 171%;
+   background-repeat: no-repeat;
+   background-position: center;
+   
+ }
+
+ #suggestionsResults > ul:hover{
+  background-size: 180%; 
+  cursor: pointer;
+}
+
+ #suggestionsResults > ul > li{
+  opacity: .8;
+  text-decoration:  none;
+  font-size: 24px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: all 1s ease-in-out; 
+  text-align: center;
+  cursor: pointer;
+ }
+
+ #suggestionsResults > ul > li:hover{
+  opacity: 1;
+ }
+
+ #imageWrapper > button{
+   border-radius: 10px;
+   font-size: 20px;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   height: 50px;
+   width: 50px;
+   cursor: pointer;
+ }
+
+#customerResults{
+  background-color: rgb(255, 255, 255);
+  width: 1200px;
+  height: 90%;
+  margin-top: 70px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+}
+
+#customerWrapper{
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  min-height: 700px;
+  max-height: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#customerInfo{
+  width: 100%;
+  min-height: 30px;
+  background-color:rgb(133, 15, 15);
+  font-size: 26px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+#customerMovies{
+  width: 100%;
+  max-height: 500px;
+  background-color: rgb(255, 255, 255);
+  padding-top: 0px;
+}
+
+tbody{
+  max-height: 30px;
+}
+
+th{
+  color:rgb(75, 74, 74);
+  background-color: rgb(209, 209, 209);
+  font-size: 28px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  text-align: left;
+  max-height: 30px;
+  margin-top: 0px;
+  width: 25%;
+}
+
+td{
+  color:rgb(59, 59, 59);
+  background-color: rgb(255, 255, 255);
+  font-size: 28px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 30px;
+  margin-top: 0px;
+  width: 25%;
+  overflow: hidden;
+}
+
+td input{
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#movieReturn{
+  width: 10%;
+  height: 30px;
+  margin: auto;
+  background-color: rgb(78, 16, 16);
+  color: white;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  transition: transform .3s ease-in-out;
+  border-radius: 10px;
+}
+
+#movieReturn:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+#tableWrapper{
+  min-height: 500px;
+  max-height: 600px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+#addCustomerWrapper{
+  width: 1200px;
+  height: 90%;
+  margin-top: 70px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#customerTextInput{
+  width: 70%;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+
+#customerTextInput p{
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+#customerTextInput > input{
+  width: 50%;
+  max-height: 40px;
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+
+
+
+#createNewCustomer{
+  width: 90px;
+  height: 40px;
+  background-color: rgb(75, 11, 11);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  color: white;
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: transform .3s ease-in-out;
+}
+
+#createNewCustomer:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+#newWrapper{
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  display: flex;
+  width: 70%;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#imageWrapper button{
+  width: 90px;
+  height: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  color: rgb(59, 59, 59);
+  font-size: 24px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: transform .3s ease-in-out;
+}
+
+#imageWrapper button:hover{
+  transform: scale(1.2);
+  cursor: pointer;
+}

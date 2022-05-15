@@ -1,0 +1,159 @@
+<html>
+<head>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3409/3409602.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MovieRent</title>
+  <meta name="description" content="MovieRent">
+  <meta name="author" content="SitePoint">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
+</head>
+
+<body style="width: 100%; height: 100%; margin-top: 0px; background:linear-gradient(rgba(17, 16, 16, 0.5), rgba(0, 0, 0, 0.5)), url(https://duofischbach.ch/wp-content/uploads/2016/05/Movie-Theater-Wallpaper-2016.jpg); padding-top: 0px; padding-bottom: 0px; margin-left: 0; background-position: center center; background-attachment: fixed; background-size: cover; background-repeat: no-repeat; background-color: rgb(56, 54, 54);">
+  <nav>
+    <div id="logoWrapper">
+      <img id="logo" src="https://cdn-icons-png.flaticon.com/512/3409/3409602.png" onclick="stateOne()"></img>
+      <h1 onclick="stateOne()">MovieRent</h1>    
+  </div>
+  <div id="container">  
+    <input autocomplete="off" type="text" id="navSearch" placeholder="Film suchen" style="display: block;">
+    <input autocomplete="off" type="text" id="customerSearch" placeholder="Kunden suchen" style="display: none;">
+    <div id="suggestions">
+    </div>
+    <div id="navCustomerSuggestions">
+    </div>
+  </div>
+   <div id="addCustomer">
+     <div id="customerNavWrapper">
+     <img src="https://www.pngkey.com/png/full/286-2861054_new-account-white-icon-person-with-plus-sign.png" id="showCustomerInterface" onclick="stateThree()">
+    </div>
+   </div>
+    <div id="kartNavWrapper">
+      <img src="https://www.pngkit.com/png/full/133-1336848_shopping-cart-white-vector.png" id="kartNav" onclick="kartView()">
+    </div> 
+    <div id="kunde">
+      <!-- <p><a href="MovieRent_customer.html">Kunde hinzufügen</a></p> -->
+      <p id="styleChange" onclick="changeStyle()">Kundensuche</p>
+  </div>
+  <div id="dimNav" style="display:none" onclick="undim()"></div>
+  </nav>
+
+  <div id="dim" style="display:none" onclick="undim()"></div>
+  
+  <article> 
+  <div id="mainpage">  
+ <!--   <div id="input" style="display:none">
+      <div id="inputMovies"></div>
+    </div>  -->
+    <!-- Vorgeschlagene Filme -->
+    <div id ="movieSuggestions">
+    <div id="suggestionsWrapper">
+      <p>Action</p>
+      <div id ="suggestionsTop">
+        
+        <div id="suggestionsTop1"><div></div></div>
+        <div id="suggestionsTop2"><div></div></div>
+        <div id="suggestionsTop3"><div></div></div>
+      </div>
+      <p>Drama</p>
+      <div id ="suggestionsMiddle">
+        
+        <div id="suggestionsMiddle1"><div></div></div>
+        <div id="suggestionsMiddle2"><div></div></div>
+        <div id="suggestionsMiddle3"><div></div></div>
+      </div>
+      <p>Science Fiction</p>
+      <div id ="suggestionsBottom">
+        
+        <div id="suggestionsBottom1"><div></div></div>
+        <div id="suggestionsBottom2"><div></div></div>
+        <div id="suggestionsBottom3"><div></div></div>
+      </div>
+    </div>
+    </div>
+ <!-- <div id="userInput" style="display:none">
+      <div id="inputUsers"></div>
+    </div> --> 
+  <!-- Suchergebnisse -->
+</div> 
+<div id="mainResults">
+  <div id ="movieInputSuggestions">
+   <div id="inputSuggestionsWrapper">
+     <div id ="inputSuggestion">
+       
+     </div>
+     <div id ="suggestionsResults">
+       <ul id="suggestionsResults1"></ul>
+       <ul id="suggestionsResults2"></ul>
+       <ul id="suggestionsResults3"></ul>
+     </div>
+   </div>
+   </div>
+ </div>
+ <div id="customerResults" display="none">
+   <div id="customerWrapper">
+     <p id="customerInfo">Kundeninfo</p>
+     <div id="tableWrapper">
+     <table id="customerMovies">
+       <tr>
+        <th>Filme</th>
+        <th>ID</th>
+        <th>Ausleihdatum</th>
+        <th>Rückgabe</th>
+       </tr>
+     </table>
+    </div>
+     
+   </div>
+   <button id="movieReturn" onclick="returnMovie()">Rückgabe</button>
+ </div>
+ <div id="addCustomerWrapper">
+   <div id="newWrapper">
+   <div id="customerTextInput">
+     <p>Neuen Kunden anlegen:</p>
+     <input type="text" id="customerForename" placeholder="Vorname" autocomplete="off">
+     <input type="text" id="customerSurname" placeholder="Nachname" autocomplete="off">
+    
+   </div>
+   <button id="createNewCustomer" onclick="saveNewCustomerData()">Fertig</button>
+  </div> 
+   </div>
+ </div>
+   <div id="ausgeliehen" style="display: none;">
+      <p>Filme ausgeliehen!</p>
+      <p id="price"></p>
+      <button id ="weiter" onclick="loadPage()">Weiter</button>
+    </div> 
+    <div id="shoppingKartWrapper" style="display: block;">
+      <div id="shoppingKart">
+      <!--  <form type="button" id="buttonKart" onclick="kartView();"><img src="https://icon-library.com/images/shopping-basket-icon/shopping-basket-icon-18.jpg"></form> -->
+        <div id="kartSearchWrapper">  
+          <input autocomplete="off" type="text" id="customerInput" placeholder="Kunde">
+          <div id="customerSuggestions">
+            
+          </div>
+        </div>
+        <p id="setCustomer"></p>
+        <div id="setMovies">
+        
+        </div>
+        <form>
+          <input type="text" id="output">
+          
+        <button onclick="rentMovie(); showRentWindow()" type="button" id="checkout" >Checkout</button>
+      </form>
+      </div>
+    </div>
+  
+  </article>
+  <footer>
+    <div>
+    © SWEP Gruppe 6
+    </div>
+  </footer>
+</body>
+<script src="/javascripts/script.js"></script>
+</html>
