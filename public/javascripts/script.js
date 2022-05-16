@@ -343,6 +343,8 @@ function createMovieSearch(movieData) {
   }) 
 }
 
+// fill output array for movie return data transmission
+
 function fillCustomerOutputArray(suggested, newID){
   console.log(newID)
   console.log(suggested)
@@ -350,11 +352,15 @@ function fillCustomerOutputArray(suggested, newID){
   console.log(customerOutputArray)
 }
 
+// wipe output array for movie return data transmission
+
 function unfillCustomerOutputArray(newID){
   console.log(newID)
   customerOutputArray[newID] = null
   console.log(customerOutputArray)
 }
+
+// wipe results on page of customer search
 
 function wipeList(){
   console.log("wipeList")
@@ -365,6 +371,8 @@ function wipeList(){
 
   }
 }
+
+// generate search results for customer nav search
 
 function createCustomerResults(suggested){
   wipeList()
@@ -434,12 +442,16 @@ function createCustomerResults(suggested){
  console.log(returnArray)
 }
 
+
+
 function createUsersSearch(usersData) {
   // handle success
   customerData = usersData
 
   const customerInput = document.getElementById("customerInput")
   const customerSuggestions = document.getElementById("customerSuggestions")
+  
+  // genereate customer search in shopping kart
   
   customerInput.addEventListener('keyup', function(){
       console.log(customerInput.value)
@@ -514,6 +526,8 @@ function createUsersSearch(usersData) {
   })
 }
 
+// delete movie from shopping kart
+
     function removeMovie(val) {  
               let r = document.getElementById('movieDiv'+val)
               console.log("Value: "+val)           
@@ -525,7 +539,9 @@ function createUsersSearch(usersData) {
     window.addEventListener('DOMContentLoaded', (event) => {
     console.log('DOM fully loaded and parsed')
     getdata();
-   });
+   })
+
+// show or hide shopping kart   
 
    function kartView(){
      let k = document.getElementById("shoppingKart")
@@ -534,29 +550,6 @@ function createUsersSearch(usersData) {
      } else {
       k.style.marginRight = "-0px"
      }
-   }
-
-   function dim(){
-     let dim = document.getElementById("dim")
-     let dimNav = document.getElementById("dimNav")
-     let search = document.getElementById("navSearch")
-     let cSearch = document.getElementById("customerSearch")
-     let c = document.getElementById("navCustomerSuggestions")
-     search.addEventListener('focus', function(){
-      if (search === document.activeElement){
-      dim.style.display = "block"
-      dimNav.style.display = "block"
-      let n = document.getElementById("suggestions")
-      n.style.display = "block"      
-      } 
-     })
-     cSearch.addEventListener('focus', function(){
-      if (cSearch === document.activeElement){
-      dim.style.display = "block"
-      dimNav.style.display = "block"
-      c.style.display = "block" 
-      } 
-     })  
    }
 
 
@@ -628,7 +621,31 @@ function showRentWindow(){
     let customerResults = document.getElementById("customerResults")
     customerResults.style.display = "none"
   }
+  
+// dim window
 
+function dim(){
+  let dim = document.getElementById("dim")
+  let dimNav = document.getElementById("dimNav")
+  let search = document.getElementById("navSearch")
+  let cSearch = document.getElementById("customerSearch")
+  let c = document.getElementById("navCustomerSuggestions")
+  search.addEventListener('focus', function(){
+   if (search === document.activeElement){
+   dim.style.display = "block"
+   dimNav.style.display = "block"
+   let n = document.getElementById("suggestions")
+   n.style.display = "block"      
+   } 
+  })
+  cSearch.addEventListener('focus', function(){
+   if (cSearch === document.activeElement){
+   dim.style.display = "block"
+   dimNav.style.display = "block"
+   c.style.display = "block" 
+   } 
+  })  
+}
    
    dim()
 
